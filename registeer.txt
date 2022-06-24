@@ -1,0 +1,10 @@
+register():void{
+this.user = { ...this.form.value};
+this.accountService.register(this.user).subscribre(
+() => this.router.navigateByUrl('/dashboard'),
+(error:any) => this.toaster.error(error.error)
+)
+}
+
+
+(ngSubmit)= "register()"
